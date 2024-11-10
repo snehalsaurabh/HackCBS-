@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_lottie import st_lottie
+# from streamlit_lottie import st_lottie
 import json
 import requests
 
@@ -11,20 +11,20 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Function to load Lottie animations from URL
-def load_lottieurl(url: str):
-    """ Loads a Lottie animation from a URL.
+# # Function to load Lottie animations from URL
+# def load_lottieurl(url: str):
+#     """ Loads a Lottie animation from a URL.
     
-    Parameters:
-        url (str): The URL of the Lottie JSON file.
+#     Parameters:
+#         url (str): The URL of the Lottie JSON file.
         
-    Returns:
-        dict: The Lottie animation JSON data or None if the request fails.
-    """
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
+#     Returns:
+#         dict: The Lottie animation JSON data or None if the request fails.
+#     """
+#     r = requests.get(url)
+#     if r.status_code != 200:
+#         return None
+#     return r.json()
 
 # Define each page as a separate function
 def home():
@@ -32,13 +32,8 @@ def home():
     st.markdown("### Your Sustainable Waste Management Solution")
     st.write("---")
     
-    # Load and display a Lottie animation
-    lottie_animation = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_u4yrau.json")
-    if lottie_animation:
-        st_lottie(lottie_animation, height=300, key="home_animation")
-    
     st.markdown("""
-        *Home$crapper* is an innovative platform connecting households and vendors to promote responsible recycling and waste management. 
+        *Home Scrapper* is an innovative platform connecting households and vendors to promote responsible recycling and waste management. 
         Our mission is to help users turn recyclable waste into value, ensuring proper and sustainable disposal. 
         Our platform also facilitates a marketplace where users can donate or sell reusable items at minimal cost, making Home$crapper an eco-friendly and socially impactful choice.
     """)
@@ -501,4 +496,4 @@ def navigation():
 
 # Call the home function to display the home page
 if __name__ == "__main__":
-    home()
+    navigation()
